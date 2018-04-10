@@ -28,7 +28,7 @@ import (
 	"fmt"
 	"testing"
 
-	driver "github.com/arangodb/go-driver"
+	driver "github.com/vinsberg/go-driver"
 )
 
 type testEnv interface {

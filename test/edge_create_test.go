@@ -27,7 +27,7 @@ import (
 	"reflect"
 	"testing"
 
-	driver "github.com/arangodb/go-driver"
+	driver "github.com/vinsberg/go-driver"
 )
 
 // TestCreateEdge creates an edge and then checks that it exists.

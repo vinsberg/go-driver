@@ -33,10 +33,10 @@ import (
 	"testing"
 	"time"
 
-	driver "github.com/arangodb/go-driver"
-	"github.com/arangodb/go-driver/http"
-	"github.com/arangodb/go-driver/vst"
-	"github.com/arangodb/go-driver/vst/protocol"
+	driver "github.com/vinsberg/go-driver"
+	"github.com/vinsberg/go-driver/http"
+	"github.com/vinsberg/go-driver/vst"
+	"github.com/vinsberg/go-driver/vst/protocol"
 )
 
 var (

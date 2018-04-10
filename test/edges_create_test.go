@@ -27,7 +27,7 @@ import (
 	"reflect"
 	"testing"
 
-	driver "github.com/arangodb/go-driver"
+	driver "github.com/vinsberg/go-driver"
 )
 
 // TestCreateEdges creates documents and then checks that it exists.

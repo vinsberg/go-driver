@@ -27,8 +27,8 @@ import (
 	"strings"
 	"sync"
 
-	driver "github.com/arangodb/go-driver"
-	"github.com/arangodb/go-driver/vst/protocol"
+	driver "github.com/vinsberg/go-driver"
+	"github.com/vinsberg/go-driver/vst/protocol"
 	velocypack "github.com/arangodb/go-velocypack"
 )
 
