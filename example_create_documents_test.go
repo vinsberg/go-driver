@@ -31,8 +31,8 @@ import (
 	"log"
 	"strings"
 
-	driver "github.com/arangodb/go-driver"
-	"github.com/arangodb/go-driver/http"
+	driver "github.com/vinsberg/go-driver"
+	"github.com/vinsberg/go-driver/http"
 )
 
 type User struct {
