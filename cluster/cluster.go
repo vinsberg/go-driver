@@ -26,6 +26,7 @@ import (
 	"context"
 	"fmt"
 	"math"
+	"math/rand"
 	"net/http"
 	"sort"
 	"strings"
@@ -145,7 +146,8 @@ func (c *clusterConnection) Do(ctx context.Context, req driver.Request) (driver.
 	attempt := 1
 	s := specificServer
 	if s == nil {
-		s = c.getCurrentServer()
+		// s = c.getCurrentServer()
+		s = c.getRandomServer()
 	}
 	for {
 		// Send request to specific endpoint with a 1/3 timeout (so we get 3 attempts)
@@ -330,6 +332,16 @@ func (c *clusterConnection) getCurrentServer() driver.Connection {
 	defer c.mutex.RUnlock()
 	return c.servers[c.current]
 }
+
+// Add by LiuJingchao on 2018-06-11 12:18
+func (c *clusterConnection) getRandomServer() driver.Connection {
+	c.mutex.RLock()
+	defer c.mutex.RUnlock()
+	c.current = rand.Intn(len(c.servers))
+	return c.servers[c.current]
+}
+
+// End by LiuJingchao
 
 // getSpecificServer returns the server with the given endpoint.
 func (c *clusterConnection) getSpecificServer(endpoint string) (driver.Connection, error) {
